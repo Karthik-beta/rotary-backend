@@ -1,20 +1,10 @@
 version: '3'
 
 services:
-
-
-
   backend:
     build:
-      context: .
-      dockerfile: Dockerfile  # Use your Django Dockerfile
+      context: ./backend
+      dockerfile: ./Dockerfile
     ports:
-      - "8000:8000"  # Map port 8000 on the host to port 8000 in the container
-    # volumes:
-    #   - ./backend/entrypoint.sh:/entrypoint.sh  # Mount the entrypoint script
-    # entrypoint: /bin/sh -c '/entrypoint.sh'  # Set the entrypoint
-    # networks:
-    #   - WIP_network
-    # depends_on:
-    restart: always  # Add this line for automatic restart
-    #   - database  # If you have a separate database container
+      - "8000:8000"
+    restart: always
